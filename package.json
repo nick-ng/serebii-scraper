@@ -1,0 +1,65 @@
+{
+  "name": "serebii-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist-back/main.js",
+  "type": "module",
+  "scripts": {
+    "dev-front": "vite --host",
+    "dev-back": "TS_NODE_PROJECT='./src-back/tsconfig.json' nodemon -L ./src-back/main.ts",
+    "dev-logs": "docker compose logs -f",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "start": "npm run stop && docker compose up -d && vite",
+    "stop": "docker compose down",
+    "serve": "node ./dist-back/main.js",
+    "build-back": "NODE_ENV=production node ./esbuild.js",
+    "build-front": "vite build",
+    "vite": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nick-ng/serebii-scraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nick-ng/serebii-scraper/issues"
+  },
+  "homepage": "https://github.com/nick-ng/serebii-scraper#readme",
+  "dependencies": {
+    "@types/compression": "^1.7.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/jsdom": "^20.0.1",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-react": "^2.2.0",
+    "autoprefixer": "^10.4.13",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "esbuild": "^0.15.15",
+    "express": "^4.18.2",
+    "jsdom": "^20.0.3",
+    "postcss": "^8.4.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3",
+    "redis": "^4.5.1",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.3",
+    "vite": "^3.2.4",
+    "zod": "^3.19.1"
+  },
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.0",
+    "prettier-plugin-tailwindcss": "^0.2.0",
+    "pretty-quick": "^3.1.3",
+    "ts-node": "^10.9.1"
+  }
+}
